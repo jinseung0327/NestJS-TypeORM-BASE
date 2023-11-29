@@ -9,11 +9,11 @@ import { User } from './users/entities/user.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mariadb',
-      host: 'crudbp.cbrivgx1kwoz.ap-northeast-2.rds.amazonaws.com',
+      host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'password',
-      database: 'crudbp',
+      password: 'jin009787~',
+      database: 'nestdb',
       entities: [User],
       synchronize: true,
     }),

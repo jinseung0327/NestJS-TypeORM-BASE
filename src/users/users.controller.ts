@@ -21,23 +21,23 @@ export class UsersController {
     return this.userService.findAll();
   }
 
-  @Get(':id')
-  getOne(@Param() id: string): Promise<User> {
+  @Get('/one:id')
+  getOne(@Param('id') id: string): Promise<User> {
     return this.userService.findOne(id);
   }
 
-  @Post()
+  @Post('/add')
   createUser(@Body() user: CreateUserDTO): Promise<User> {
     return this.userService.create(user);
   }
 
-  @Patch(':id')
-  updateOne(@Param() id: string, @Body() user: UpdateUserDTO) {
+  @Patch('/updt/:id')
+  updateOne(@Param('id') id: string, @Body() user: UpdateUserDTO) {
     return this.userService.update(id, user);
   }
 
-  @Delete(':id')
-  deleteOne(@Param() id: string): Promise<void> {
+  @Delete('/del/:id')
+  deleteOne(@Param('id') id: string): Promise<void> {
     return this.userService.delete(id);
   }
 }
